@@ -1,8 +1,15 @@
+import Navigation from "./customer/components/Navigation/Navigation";
+import HomePage from "./customer/pages/Homepage/HomePage";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl text-gray-700 font-bold">Hello World!</h1>
+    <div className="">
+      <div>
+        <Navigation />
+        <div>
+          <HomePage />
+        </div>
+      </div>
     </div>
   );
 }
