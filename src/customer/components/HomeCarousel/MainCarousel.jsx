@@ -20,7 +20,7 @@ const MainCarousel = () => {
   autoPlay
   autoPlayInterval={2000}
   infinite
-/>;
+/>
 };
 
 export default MainCarousel;
