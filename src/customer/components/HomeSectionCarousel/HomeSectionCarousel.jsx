@@ -4,10 +4,9 @@ import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 import { Button } from "@mui/material";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { useState } from "react";
-import { mens_kurta } from "../../../Data/mens_kurta";
 import { useRef } from "react";
 
-const HomeSectionCarousel = () => {
+const HomeSectionCarousel = ({data,sectionName}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   console.log(activeIndex)
   const responsive = {
@@ -35,10 +34,11 @@ const HomeSectionCarousel = () => {
     console.log(activeIndex)
   }
   
-  const items = mens_kurta.slice(0,10).map((item) => <HomeSectionCard product={item}/>);
+  const items = data.slice(0,10).map((item) => <HomeSectionCard product={item}/>);
 
   return (
-    <div className="border">
+    <div className="">
+      <h2 className="text-2xl font-extrabold text-gray-800 py-5">{sectionName}</h2>
       <div className="relative px-3 lg:px-5 ">
         <AliceCarousel
           items={items}
@@ -48,6 +48,7 @@ const HomeSectionCarousel = () => {
           onSlideChanged={syncActiveIndex}
           ref={(el) => (carousel.current = el)}
         />
+
         {/* next button */}
         {activeIndex !== items.length-4 && <Button
           variant="contained"
