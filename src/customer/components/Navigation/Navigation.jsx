@@ -134,7 +134,7 @@ export default function Navigation() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="bg-white">
+    <div className="bg-white pb-10">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -289,7 +289,6 @@ export default function Navigation() {
                 className="relative rounded-md bg-white p-2 text-gray-400 lg:hidden"
                 onClick={() => setOpen(true)}
               >
-                <span className="absolute -inset-0.5" />
                 <span className="sr-only">Open menu</span>
                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
               </button>
@@ -307,7 +306,7 @@ export default function Navigation() {
               </div>
 
               {/* Flyout menus */}
-              <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
+              <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch z-10">
                 <div className="flex h-full space-x-8">
                   {navigation.categories.map((category) => (
                     <Popover key={category.name} className="flex">
